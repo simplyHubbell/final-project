@@ -202,7 +202,7 @@ const funFact = async (req, res) => {
     const state = await States.findOne({ stateCode: code }).exec();
 
     //checks if state has facts/exists in MongoDB
-    if (!state) return res.json({ '': `No fun facts found for ${stateName}` });
+    if (!state) return res.json({ 'message': `No Fun Facts found for ${stateName}` });
 
     //retrieves facts from state
     const stateFacts = state.funfacts;
